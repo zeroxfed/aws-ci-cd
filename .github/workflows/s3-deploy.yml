@@ -20,4 +20,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy static site to S3
-        run: aws s3 sync ./build s3://aws-ci-cd --delete
+        run: aws s3 sync ./dist s3://global-command-totally-leet-site --delete
