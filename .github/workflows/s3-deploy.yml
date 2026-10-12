@@ -13,11 +13,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up AWS CLI
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy static site to S3
-        run: aws s3 sync ./build s3://my-ci-cd-static-site --delete
+        run: aws s3 sync ./build s3://aws-ci-cd --delete
